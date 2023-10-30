@@ -59,7 +59,7 @@ func CheckFileData(data string) bool{
 }
 
 func ValidatTertromino(input string) bool{
-	lines := strings.Split(strings.Trim(input, "\n\t"))
+	lines := strings.Split(strings.Trim(input, "\n\t"), "\n")
 	NumRows := len(lines)
 	NumClom := len(lines[0])
 	
