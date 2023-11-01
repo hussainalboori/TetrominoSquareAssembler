@@ -13,5 +13,6 @@ func main() {
 	if !validation.CheckIfValid(Inpout){
 		log.Panicln("Error")
 		return
+		le
 	}
 }
