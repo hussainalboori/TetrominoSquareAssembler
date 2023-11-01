@@ -4,6 +4,7 @@ import (
 	"log"
 	"os"
 	"tetris-optimizer/Validation"
+	"tetris-optimizer/src"
 	// "time"
 )
 
@@ -13,6 +14,7 @@ func main() {
 	if !validation.CheckIfValid(Inpout){
 		log.Panicln("Error")
 		return
-		le
+		
 	}
+	src.Run(Inpout[0])
 }
