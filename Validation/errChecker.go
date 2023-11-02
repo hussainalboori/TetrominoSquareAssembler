@@ -45,13 +45,13 @@ func CheckFileExt(s string) bool {
 	return true
 }
 
-func CheckFileData(data string) bool{
-	split := strings.Split(data, "/n/n")
-	for _, block := range split {
-		lines := strings.Split(strings.Trim(data, "\n\t"), "\n")
-		NumRows := len(lines)
-		NumClom := len(lines[0])
-		if NumRows != 4 || NumClom != 4 || strings.Count(block, "#") != 4 || strings.Count(block, ".") != 12 {
+func CheckFileData(content string) bool {
+	blocks := strings.Split(content, "\n\n")
+	for _, block := range blocks {
+		lines := strings.Split(strings.Trim(block, "\n\t "), "\n")
+		numRows := len(lines)
+		numCols := len(lines[0])
+		if numRows != 4 || numCols != 4 || strings.Count(block, "#") != 4 || strings.Count(block, ".") != 12 {
 			return false
 		}
 	}
