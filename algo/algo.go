@@ -2,17 +2,20 @@ package algo
 
 import "fmt"
 
+// Board represents the tetro board.
 type Board struct {
-	Dim   int
-	Cells [][]uint8
+	Dim   int 		// Dimension of the square board
+	Cells [][]uint8	// Matrix representing the board cells
 }
 
+// Tetromino represents a Tetris piece.
 type Tetromino struct {
-	Letter        uint8
+	Letter        uint8  
 	Shape         []string
 	Width, Height int
 }
 
+// CheckFit checks if a Tetromino can be placed at the specified row and column on the board.
 func CheckFit(board *Board, tetromino *Tetromino, row, col int) bool {
 	for i := 0; i < tetromino.Height; i++ {
 		for j := 0; j < tetromino.Width; j++ {
